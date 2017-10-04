@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script type="text/javascript" src="assets/javascript/game.js"></script>
+  <title>Hang Man</title>
+  <!--javascript-->
+
+  <!--css reset bootstrap style-->
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  <!-- bootstrap CDN-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- personal stylesheet-->
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+  <header class="row">
+    <!--no clue-->
+    <div  class="col-lg-2">
+      <div class="row">
+        <div class="col-lg-8">
+          <p>booty = </p>
+        </div>
+        <div class="col-lg-4">
+          <p>0</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-8">
+          <p>Hull Strength =</p>
+        </div>
+        <div class="col-lg-4">
+          100%
+        </div>
+      </div>
+    </div>
+    <!--dynamic Textbox-->
+    <div class="col-lg-8">
+      <p id="dynamicText">dynamic Text here</p>
+    </div>
+    <!--titlehere-->
+    <div  class="col-lg-2">
+      <h1 id="titleText">Cool Title Here</h1>
+    </div>
+  </header>
+  <main class="row">
+    <!--yourShip-->
+    <div class="col-lg-2">
+    <img src="assets/images/testShip.jpg">
+    </div>
+    <!--gamespace-->
+    <div  class="col-lg-8">
+      <div class="row">
+        <div class="col-lg-6">
+        </div>
+        <div class="col-lg-6">
+        </div>
+      </div>
+    </div>
+    <!--enemyShip-->
+    <div class="col-lg-2">
+      <img src="assets/images/testShip.jpg">
+    </div>
+  </main>
+  <footer class="row">
+    <!--Your Guess-->
+    <div class="col-lg-2">
+      <h1>You Picked!</h1>
+    </div>
+    <!--alphabet holder-->
+    <div class="col-lg-8">
+      <h1 id="alphaHolder">Remaining Letters</h1>
+
+
+    </div>
+    <!--notsure-->
+    <div class="col-lg-2">
+      <h1>You Picked!</h1>
+    </div>
+  </footer>
+</body>
+<script type="text/javascript">
+// prints out all letters in alphabet
+
+var alpha = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u" , "v", "w", "x", "y", "z"];
+var text = "";
+var i;
+for (i = 0; i < alpha.length; i++) {
+    text += alpha[i] + " ";
+};
+document.getElementById("alphaHolder").innerHTML = text;
+// causes computer to choose random word from wordbank
+var wordBank = [Booty, Yarr, Yoho, Plunder, ]
+  var mysteryWord = wordBank[Math.floor(Math.random() * wordBank.length)];
+
+</script>
+</html>

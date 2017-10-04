@@ -1,0 +1,40 @@
+body{
+  background-image: url(../images/ocean.jpg);
+}
+.posRel{
+  position:relative;
+}
+
+.posAbs{
+  position:absolute;
+}
+/*----------<header>---------------*/
+/*----------<footer>---------------*/
+#dynamicText{
+  text-align: center;
+}
+
+#titleText{
+  text-align:center;
+}
+#botLeft{
+  bottom:0;
+  left: 0;
+  width: 20%;
+  display:inline-block;
+}
+#botMid{
+  bottom:0;
+  width:60%;
+  display:inline-block;
+}
+#botRight{
+  bottom:0;
+  right:0;
+  width:20%;
+  display:inline-block;
+}
+/*----------<footer>---------------*/
+#alphaHolder{
+  display:inline-block;
+}
