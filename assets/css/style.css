@@ -9,6 +9,14 @@ body{
   position:absolute;
 }
 /*----------<header>---------------*/
+#guessContainer{
+text-align: center;
+font-size: 3em;
+}
+#wordContainer{
+text-align: center;
+font-size: 4em;
+}
 /*----------<footer>---------------*/
 #dynamicText{
   text-align: center;
@@ -22,6 +30,7 @@ body{
   left: 0;
   width: 20%;
   display:inline-block;
+  margin: 0 auto;
 }
 #botMid{
   bottom:0;
@@ -32,7 +41,7 @@ body{
   bottom:0;
   right:0;
   width:20%;
-  display:inline-block;
+  margin: 0 auto;
 }
 /*----------<footer>---------------*/
 #alphaHolder{

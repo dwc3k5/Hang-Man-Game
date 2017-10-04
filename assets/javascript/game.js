@@ -6,8 +6,6 @@ console.log("working");
 var alpha = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 //text variable currently defined as an empty string, used in loop below
 var text = "";
-//undefined variable used in loop below
-var i;
 /* *deep inhale* I break the loop below down piece by piece.
 i = 0;
 starts vairable i at 0.
@@ -21,8 +19,8 @@ increases the value of i by one each time the loop is run.
 text += alpha[i] + " ";
 makes the value of the above text variable equal to wherever the loop is in the index + a space to spread the letters out.
 */
-for (i = 0; i < alpha.length; i++) {
-  text += alpha[i] + " ";
+for (var i = 0; i < alpha.length; i++) {
+  text += alpha[i] + "_";
 }
 
 
