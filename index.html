@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
-  <script type="text/javascript" src="assets/javascript/game.js"></script>
   <title>Hang Man</title>
-  <!--javascript-->
-
   <!--css reset bootstrap style-->
   <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
   <!-- bootstrap CDN-->
@@ -13,10 +11,11 @@
   <!-- personal stylesheet-->
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
+
 <body>
   <header class="row">
     <!--no clue-->
-    <div  class="col-lg-2">
+    <div class="col-lg-2">
       <div class="row">
         <div class="col-lg-8">
           <p>booty = </p>
@@ -36,24 +35,42 @@
     </div>
     <!--dynamic Textbox-->
     <div class="col-lg-8">
-      <p id="dynamicText">dynamic Text here</p>
+      <div class="row">
+        <p id="dynamicText">dynamic Text here</p>
+      </div>
+      <div class="row">
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+            <span class="sr-only">60% Complete</span>
+          </div>
+        </div>
+      </div>
     </div>
     <!--titlehere-->
-    <div  class="col-lg-2">
+    <div class="col-lg-2">
       <h1 id="titleText">Cool Title Here</h1>
     </div>
   </header>
   <main class="row">
     <!--yourShip-->
     <div class="col-lg-2">
-    <img src="assets/images/testShip.jpg">
+      <img src="assets/images/testShip.jpg">
+      <img src="assets/images/testShip.jpg" id="fire">
     </div>
     <!--gamespace-->
-    <div  class="col-lg-8">
+    <div class="col-lg-8">
       <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-2">
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-8">
+          <div class ="row">
+            <p id="guessContainer">mysteryCategoryHere</p>
+          </div>
+          <div class="row">
+            <p id="wordContainer">mysteryWordHere</p>
+          </div>
+        </div>
+        <div class="col-lg-2">
         </div>
       </div>
     </div>
@@ -65,33 +82,29 @@
   <footer class="row">
     <!--Your Guess-->
     <div class="col-lg-2">
-      <h1>You Picked!</h1>
+      <h1 id="botLeft">You Picked!</h1>
     </div>
     <!--alphabet holder-->
     <div class="col-lg-8">
       <h1 id="alphaHolder">Remaining Letters</h1>
-
-
     </div>
     <!--notsure-->
     <div class="col-lg-2">
-      <h1>You Picked!</h1>
+      <h1 id="botRight">You Picked!</h1>
     </div>
   </footer>
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
 <script type="text/javascript">
-// prints out all letters in alphabet
+// document.getElementById("alphaHolder").innerHTML = "text";
+// document.getElementById("alphaHolder").innerHTML = "God please work!";
 
-var alpha = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u" , "v", "w", "x", "y", "z"];
-var text = "";
-var i;
-for (i = 0; i < alpha.length; i++) {
-    text += alpha[i] + " ";
-};
-document.getElementById("alphaHolder").innerHTML = text;
-// causes computer to choose random word from wordbank
-var wordBank = [Booty, Yarr, Yoho, Plunder, ]
-  var mysteryWord = wordBank[Math.floor(Math.random() * wordBank.length)];
+
+
+
+
+
 
 </script>
+
 </html>
