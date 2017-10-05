@@ -16,7 +16,6 @@ font-size: 3em;
 #wordContainer{
 text-align: center;
 font-size: 4em;
-text-decoration:underline;
 opacity: 0.5;
 }
 /*----------<footer>---------------*/
@@ -46,5 +45,5 @@ opacity: 0.5;
 }
 /*----------<footer>---------------*/
 #alphaHolder{
-  display:inline-block;
+  text-align: center;
 }
