@@ -45,11 +45,12 @@ var categoriesIndex = Math.floor(Math.random() * categories.length);
   /*--------generating a random word based on the category-----*/
   //undefined variable. used later to hold information.
   var wordBank;
+
 //determine random wordbank based on category index generated
 if(categoriesIndex === 0) {
-  wordBank = ["First Mate", "Blackbeard", "Redbeard", "Davey Jones", "Captain Hook"];
+  wordBank = ["First Mate", "blackbeard", "redbeard", "Davey Jones", "Captain Hook"];
 }else if (categoriesIndex === 1){
-  wordBank = [ "Booty", "Peg Leg", "Shark Bait", "Plunder"];
+  wordBank = [ "booty", "Peg Leg", "Shark Bait", "Plunder"];
 }else if (categoriesIndex === 2){
   wordBank = ["Crows Nest", "Captains Quarters"];
 }else if (categoriesIndex === 3){
@@ -64,7 +65,7 @@ if(categoriesIndex === 0) {
 //tests to check array in console.log()
   console.log(wordArray);
 //posts the word to the html doc at the location id'd by id="wordContainer"
-//creates a loop that posts each part of the array
+//creates a loop that posts each part of the array with a space inbetween
   for(var j = 0; j<wordArray.length; j++){
     var letterRetrieve = 0;
     document.getElementById("wordContainer").innerHTML = wordArray.join(" ");
@@ -73,7 +74,7 @@ if(categoriesIndex === 0) {
   // document.getElementById("wordContainer").innerHTML = wordArray;
 
 
-
+console.log(wordArray.indexOf(1));
 /*-----------keypress function-------*/
 //runs the function when a key is pressed, then released
   document.onkeyup = function(event) {
@@ -89,8 +90,12 @@ if(categoriesIndex === 0) {
 
 /*----------land of misfit code------------*/
 /*----------aka tinkering space------------*/
-
-
+//nonfunctioning: array will change opacity of text in "wordContainer" if index of array matches
+var wordArray;
+console.log(wordArray);
+if(wordArray === wordArray){
+  document.getElementById("wordContainer").element.style.opacity = 1;
+}
 /*
 if mysteryCategory ==="People" then var mysteryWord === wordBankP
 else if mysteryCategory ==="Things" then var mysteryWord === wordBankT
