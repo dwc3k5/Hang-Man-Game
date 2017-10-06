@@ -34,6 +34,12 @@ opacity: 0.5;
        -o-transition: width .6s ease;
           transition: width .6s ease;
 }
+#repair{
+  margin-left: 5%;
+}
+#success{
+  margin-left: 5%;
+}
 /*----------<footer>---------------*/
 #dynamicText{
   text-align: center;
