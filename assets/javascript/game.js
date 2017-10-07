@@ -5,6 +5,10 @@ var hullStrengthMax = 100;
 var booty = 20;
 var hullStrength = 100;
 var shipsSunk = 0;
+var bootyMax = 0;
+var shipsSunkMax= 0;
+
+
 
 
 
@@ -68,7 +72,18 @@ document.getElementById("shipsSunk").innerHTML = "ships Sunk: " + shipsSunk;
       document.getElementById("shipsSunk").innerHTML = shipsSunk;
       document.getElementById("booty").innerHTML = booty + " gold";
       setUp();
-      console.log(shipsSunk);
+
+      if(shipsSunk> shipsSunkMax){
+        shipsSunkMax = shipsSunk;
+        document.getElementById("shipsSunkMax").innerHTML = "Max Ships Sunk: " + shipsSunkMax;
+
+        if(booty > bootyMax){
+          console.log("yo");
+          bootyMax = booty;
+          document.getElementById("bootyMax").innerHTML = "Max Booty" + bootyMax;
+        }
+      }
+
     }else if(shipsSunk<=3){
       hullStrength -=2;
     }else if(shipsSunk <= 6){
@@ -100,7 +115,6 @@ document.getElementById("repair").onclick = function(){
 
     document.getElementById("botLeft").innerHTML = guessKey;
     document.getElementById("botRight").innerHTML = guessKey;
-    document.getElementById("dynamicText").innerHTML = "Fire!!!";
 
 
     /*section activates wordbank-------------------------------------------------*/
@@ -122,21 +136,18 @@ document.getElementById("repair").onclick = function(){
             mysteryWordArray[i] = guessKey;
         document.getElementById("wordContainer").innerHTML = mysteryWordArray.join(" ");}}
 
+
+
 /*shipdamageincreases with more ships sunk-------------------------------*/
       }else if(shipsSunk<=3){
         hullStrength -=2;
-        document.getElementById("hullStrength").innerHTML= hullStrength + "%";
-      }else if(shipsSunk <= 6){
-        hullStrength -=3;
-        document.getElementById("hullStrength").innerHTML= hullStrength + "%";
-      }else{
-        hullStrength -=4;
         document.getElementById("hullStrength").innerHTML= hullStrength + "%";
         if(hullStrength <0){
           alert("Ye be sunk Matey!");
           var r = confirm("Try yer Luck again?");
             if (r===true){
               alert("good on ya!");
+              shipsSunk = 0;
               hullStrength = 100;
               setUp();
               document.getElementById("hullStrength").innerHTML = hullStrength + "%";
@@ -147,6 +158,44 @@ document.getElementById("repair").onclick = function(){
             }
 
         }
+      }else if(shipsSunk <= 6){
+        hullStrength -=3;
+        document.getElementById("hullStrength").innerHTML= hullStrength + "%";if(hullStrength <0){
+          alert("Ye be sunk Matey!");
+          var s = confirm("Try yer Luck again?");
+            if (s===true){
+              alert("good on ya!");
+              shipsSunk = 0;
+              hullStrength = 100;
+              setUp();
+              document.getElementById("hullStrength").innerHTML = hullStrength + "%";
+
+              //reset();
+            }else{
+              alert("to the locker with ya!");
+            }
+
+        }
+      }else{
+        hullStrength -=4;
+        document.getElementById("hullStrength").innerHTML= hullStrength + "%";
+        if(hullStrength <0){
+          alert("Ye be sunk Matey!");
+          var t = confirm("Try yer Luck again?");
+            if (t===true){
+              alert("good on ya!");
+              shipsSunk = 0;
+              hullStrength = 100;
+              setUp();
+              document.getElementById("hullStrength").innerHTML = hullStrength + "%";
+
+              //reset();
+            }else{
+              alert("to the locker with ya!");
+            }
+
+        }
+
       }
   };
 
