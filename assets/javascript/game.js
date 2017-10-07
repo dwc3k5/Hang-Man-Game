@@ -4,13 +4,15 @@
 var hullStrengthMax = 100;
 var booty = 20;
 var hullStrength = 100;
+var shipsSunk = 0;
 
-document.getElementById("booty").innerHTML = booty + " gold";
+
 
 
 
 $(document).ready(function setUp() {
-
+document.getElementById("booty").innerHTML = booty + " gold";
+document.getElementById("shipsSunk").innerHTML = "ships Sunk: " + shipsSunk;
 // function setUp(){
   /*----------alphabet generator-------------------------------------------------*/
 
@@ -62,18 +64,26 @@ $(document).ready(function setUp() {
   document.getElementById("success").onclick = function(){
     if(mysteryWordArray.indexOf("_") === -1){
       booty += 20;
+      shipsSunk += 1;
+      document.getElementById("shipsSunk").innerHTML = shipsSunk;
       document.getElementById("booty").innerHTML = booty + " gold";
       setUp();
-    }else{
+      console.log(shipsSunk);
+    }else if(shipsSunk<=3){
       hullStrength -=2;
+    }else if(shipsSunk <= 6){
+      hullStrength -=3;
+    }else if(shipsSunk <=9){
+      hullStrength -=4;
     }
   };
 
 
 /*Ship repair-----------------------------------------------------------*/
 document.getElementById("repair").onclick = function(){
+  console.log("hey");
   if(booty > 10){
-    botty -=10;
+    booty -=10;
     document.getElementById("booty").innerHTML = booty + " gold";
     hullStrength += 10;
     document.getElementById("hullStrength").innerHTML= hullStrength + "%";
@@ -112,8 +122,15 @@ document.getElementById("repair").onclick = function(){
             mysteryWordArray[i] = guessKey;
         document.getElementById("wordContainer").innerHTML = mysteryWordArray.join(" ");}}
 
+/*shipdamageincreases with more ships sunk-------------------------------*/
+      }else if(shipsSunk<=3){
+        hullStrength -=2;
+        document.getElementById("hullStrength").innerHTML= hullStrength + "%";
+      }else if(shipsSunk <= 6){
+        hullStrength -=3;
+        document.getElementById("hullStrength").innerHTML= hullStrength + "%";
       }else{
-        hullStrength -= 2;
+        hullStrength -=4;
         document.getElementById("hullStrength").innerHTML= hullStrength + "%";
         if(hullStrength <0){
           alert("Ye be sunk Matey!");
@@ -134,77 +151,3 @@ document.getElementById("repair").onclick = function(){
   };
 
 }); // closes document.ready
-
-
-
-
-
-
-
-
-
-
-
-/*keypress function------------------------------------------------------------*/
-// document.onkeyup = function(event) {
-//   var guessKey = event.key;
-//   var guessArrayNumber = alpha.indexOf(guessKey);
-//
-//   document.getElementById("botLeft").innerHTML = guessKey;
-//   document.getElementById("botRight").innerHTML = guessKey;
-//   document.getElementById("dynamicText").innerHTML = "Fire!!!";
-
-
-  /*section activates wordbank-------------------------------------------------*/
-
-
-
-  // alpha.splice(guessArrayNumber, 1, "_");
-  // for (var j = 0; j < alpha.length; j++) {
-  //   var letterRetrieve = 0;
-  //   document.getElementById("alphaHolder").innerHTML = alpha.join(" ");
-  //   letterRetrieve++;
-  // }
-
-
-/*DETERMINE IF LETTER IS IN hiddenWord-----------------------------------------*/
-    // console.log("guessKey " + guessKey);
-    // console.log("mysteryWordArray2" + mysteryWordArray2);
-    // console.log("mysteryWordArray" + mysteryWordArray);
-    // if(mysteryWordArray2.indexOf(guessKey) !== -1 ){
-    //    for(var i=0; i<mysteryWordArray2.length; i++){
-    //       if( guessKey === mysteryWordArray2[i] ){
-    //       mysteryWordArray[i] = guessKey;
-    //   document.getElementById("wordContainer").innerHTML = mysteryWordArray.join(" ");}}
-    // }else{
-    //   hullStrength -= 2;
-    //   document.getElementById("hullStrength").innerHTML= hullStrength + "%";
-    //   if(hullStrength <0){
-    //     alert("Ye be sunk Matey!");
-    //     var r = confirm("Try yer Luck again?");
-    //       if (r===true){
-    //         alert("good on ya!");
-    //         hullStrength = hullStrengthMax;
-    //         setUp();
-    //       }else{
-    //         alert("to the locker with ya!");
-    //       }
-    //   }
-
-
-      // document.getElementById("healthBar").width = hullStrength-hullStrengthMax;
-//
-//     }
-// };
-//
-// if( hullStrength >= 66){
-//   document.getElementById("healthBar").style.color = "blue";
-// }else if(hullStrength >=33){
-//   document.getElementById("healthBar").style.color = "yellow";
-// }else{
-//   document.getElementById("healthBar").style.color = "red";
-// }
-
-
-
-// set timeout

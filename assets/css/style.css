@@ -9,6 +9,9 @@ body{
   position:absolute;
 }
 /*----------<header>---------------*/
+#shipsSunk{
+  text-align: right;
+}
 #guessContainer{
 text-align: center;
 font-size: 3em;
